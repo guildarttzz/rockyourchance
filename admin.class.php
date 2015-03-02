@@ -13,7 +13,7 @@ class Administrateur
     public function __construct($id_admin = 0)
     {
         if(self::exist($id_admin)) {
-            if (verifInt($id_admin)) {
+            if (is_numeric($id_admin)) {
                 $req = "SELECT * FROM administrateur WHERE id_admin = '$id_admin'";
             }else {
                 $req = "SELECT * FROM administrateur WHERE pseudo = '$id_admin'";            
@@ -146,21 +146,20 @@ class Administrateur
         return true;
     }
 
-    public function isAdmin()
+    /*public function isAdmin()
     {
         if($this->_admin != 1) {
             return false;
         } 
         return true;
-    }
+    }*/
 
    static public function exist($u = null) 
     {
         if (!is_null($u)) 
         {
-            if (verifMail($u)) $where = "email = '$u'";
-            else if (verifInt($u)) $where = "id_admin = '" . intval($u) . "'";
-            else if (verifName($u)) $where = "pseudo = '$u'";
+            if (is_numeric($u)) $where = "id_admin = '" . intval($u) . "'";
+            else if (is_string($u)) $where = "pseudo = '$u'";
             else return false;
             
             $req = "SELECT id_admin FROM administrateur WHERE " . $where;
