@@ -1,12 +1,8 @@
 <?php
-session_start();
-$db = mysqli_connect("127.0.0.1", "root", "", "rock");
-if (mysqli_connect_errno($db)) {
-    var_dump("Echec lors de la connexion à MySQL : " . mysqli_connect_error());
-    die();
-}
+
+require "require.php";
 //head("Register");
-require "admin.class.php";
+
 
 $alert = $email = null;
 if(isset($_POST['pseudo']) && isset($_POST['password'])){
@@ -22,7 +18,7 @@ if(isset($_POST['pseudo']) && isset($_POST['password'])){
         }else{
             //$_SESSION['id'] = $u->getId();
             $alert = "Vous êtes connecté.";
-            header('Location: index.html');
+            header('Location: index.php');
         }
     }
 }

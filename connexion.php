@@ -1,12 +1,5 @@
 <?php
-session_start();
-$db = mysqli_connect("127.0.0.1", "root", "", "rock");
-if (mysqli_connect_errno($db)) {
-    var_dump("Echec lors de la connexion à MySQL : " . mysqli_connect_error());
-    die();
-}
-//head("Register");
-require "admin.class.php";
+require "require.php";
 $alert = $email = null;
 
 if (isset($_POST['adresse']) && isset($_POST['email']) && isset($_POST['numtel']) && isset($_POST['password'])  && isset($_POST['comptefb'])&& isset($_POST['pseudo']) && isset($_POST['cemail']) && isset($_POST['cpassword'])) 

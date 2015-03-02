@@ -1,5 +1,6 @@
 <?php
-require "function.php";
+
+require "require.php";
 
 ?>
 <!doctype html>
@@ -22,7 +23,7 @@ require "function.php";
 	<div class="container">
 		 <div class="containerHoriz">
 		 	<ul id="menu_horizontal">
-				<li class="bouton_gauche"><a href="index.html">
+				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
 				<li class="bouton_gauche"><a href="Prog.php">
 							<font color="black"><b>Programmation</b></font></a></li>
@@ -37,7 +38,7 @@ require "function.php";
 				<?php
 					switchMenu();
 				?>
-				<li class="bouton_droite"><a href="face.php">
+				<li class="bouton_droite"><a href="login.php">
 							<img src="iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
 		
 			</ul>

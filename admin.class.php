@@ -1,5 +1,4 @@
 <?php
-require "function.php";
 class Administrateur
 {
     private $_id_admin;

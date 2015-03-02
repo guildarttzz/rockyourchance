@@ -1,4 +1,5 @@
 <?php
+
 function isConnected()
 {
     if (!isset($_SESSION['id'])) {
@@ -52,7 +53,9 @@ function switchMenu()
 {
     $u = isset($_SESSION['id'])? new Administrateur($_SESSION['id']):new Administrateur();
     if (isConnected()) {
-        echo Administrateur::getPseudo();
+        echo '
+            yolo
+        ';
     }else{
         echo '
             <li><a href="login.php">Connexion</a>
