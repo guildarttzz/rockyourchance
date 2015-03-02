@@ -55,7 +55,7 @@ if (isset($_POST['adresse']) && isset($_POST['email']) && isset($_POST['numtel']
     elseif (!$u->insert()) {$alert = 'Problème Insert';}
     else 
     {
-        header('Location: index.php');
+        header('Location: index.html');
     }
 }
 ?>

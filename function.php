@@ -46,3 +46,17 @@ function head($title)
         </head>
     ';
 }
+
+
+function switchMenu()
+{
+    $u = isset($_SESSION['id'])? new Administrateur($_SESSION['id']):new Administrateur();
+    if (isConnected()) {
+        echo Administrateur::getPseudo();
+    }else{
+        echo '
+            <li><a href="login.php">Connexion</a>
+            </li>
+        ';
+    }
+}
