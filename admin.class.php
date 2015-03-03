@@ -1,171 +1,311 @@
 <?php
-class Administrateur
-{
-    private $_id_admin;
-    private $_adresse;
-    private $_numtel;
-    private $_email;
-    private $_comptefb;
-    private $_password;
-    private $_pseudo;
-    
-    public function __construct($id_admin = 0)
+
+/**
+ *  Class User
+ *  @author Manu
+ *  @package Ebrid
+ *
+ */
+class Admin{
+    private $uid;
+    private $email;
+    private $nickname;
+    private $password;
+    private $firstname;
+    private $lastname;
+    private $signature;
+    private $created;
+    private $connected;
+    private $navigated;
+    private $ip;
+    private $status;
+    private $bantime;
+
+    /**
+     *  Constructeur
+     *  @param int $uid
+     *  @package Ebrid
+     *  @since 0.1
+     *
+     */
+   public  function __construct($uid = 0)
     {
-        if(self::exist($id_admin)) {
-            if (is_numeric($id_admin)) {
-                $req = "SELECT * FROM administrateur WHERE id_admin = '$id_admin'";
-            }else {
-                $req = "SELECT * FROM administrateur WHERE pseudo = '$id_admin'";            
+        if(self::_exist($uid)){
+            if (is_numeric($uid)){
+                $req = "SELECT * FROM admin WHERE uid = '$uid'";
+            }else{
+                $req = "SELECT * FROM admin WHERE nickname = '$uid'";
             }
-            $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . FILE . ' à la ligne ' . LINE . ' avec la requete : ' . $req);
-            while($a = mysqli_fetch_assoc($res)){
-                $this->_id_admin = $a['id_admin'];
-                $this->_adresse = $a['adresse'];
-                $this->_numtel = $a['numtel'];
-                $this->_comptefb = $a['comptefb'];
-                $this->_password = $a['password'];
-                $this->_pseudo = $a['pseudo'];
+
+            foreach(Database::_query($req) as $a){
+                $this->uid = $a['uid'];
+                $this->email = $a['email'];
+                $this->nickname = $a['nickname'];
+                $this->password = $a['password'];
+                $this->firstname = $a['first_name'];
+                $this->lastname = $a['last_name'];
+                $this->signature = $a['signature'];
+                $this->created = $a['created'];
+                $this->connected = $a['connected'];
+                $this->navigated = $a['navigated'];
+                $this->ip = $a['ip'];
+                $this->status = $a['status'];
+                $this->bantime = $a['bantime'];
             }
         }else {
-            $this->_adresse = 0;
-            $this->_numtel = 0;
-            $this->_comptefb = 0;
-            $this->_password = 0;
-            $this->_pseudo = 0;
-        }
+            $this->uid = 0;
+            $this->email = 0;
+            $this->nickname = 0;
+            $this->password = 0;
+            $this->name = null;
+            $this->last_name = null;
+            $this->signature = null;
+            $this->created = 0;
+            $this->connected = 0;
+            $this->navigated = 0;
+            $this->ip = '0.0.0.0';
+            $this->status = 0;
+            $this->bantime = 0;
+        }        
     }
-    public function getEmail()
-    {
-        return $this->_email;
-    }
-
-    public function getPseudo()
-    {
-        return $this->_pseudo;
-    }
-
-    public function getPassword()
-    {
-        return $this->_password;
-    }
-
-    public function getIdAdmin()
-    {
-        return $this->_id_admin;
+ 
+    public function setUid($uid){
+        
+        $this->uid = $uid;
     }
 
-    public function getAdresse()
-    {
-        return $this->_adresse;
+    public function getUid(){
+        
+        return $this->uid;
     }
-
-    public function getNumTel()
-    {
-        return $this->numtel;
-    }
-
-    public function getCompteFb()
-    {
-        return $this->_comptefb;
-    }
-
-    public function setEmail($email)
-    {
-        if (!preg_match("#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$#", $email)) 
+    public function setEmail($email){
+        
+       if (!preg_match("#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$#", $email)) 
         {
             return false;
         }
-        $this->_email = $email;
+        $this->email = $email;
         return true;
     }
 
-    public function setPseudo($pseudo) 
-    {
-        if (!preg_match("#^[\w\.\#\-\s]{5,}$#", $pseudo)) 
+    public function getEmail(){
+        
+        return $this->email;
+    }
+
+    public function setNickame($nick){
+         
+        if (!preg_match("#^[\w\.\#\-\s]{5,}$#", $nickname)) 
         {
             return false;
         }
-        $this->_pseudo = $pseudo;
+        $this->nickname = $nickname;
         return true;
     }
 
-    public function setPassword($password)
-    {
+    public function getNickname(){
+        
+        return $this->nickname;
+    }
+
+    public function setPassword($password){
+        
         if (!preg_match("#^[\w\.\#\-\s]{6,}$#", $password)) 
         {
             return false;
         }   
-        $this->_password = $password;
+        $this->password = $password;
         return true;
     }
 
-    public function setIdAdmin($id_admin)
-    {
-        $this->_id_admin = $id_admin;
+    public function getPassword(){
+        
+        return $this->password;
     }
 
-    public function setAdresse($adresse){
-        if (!preg_match("#^[\w\s\d\-]{30,}$#", $adresse)){
-            
+    public function setFirstname($name){
+        
+        if(!preg_match("#^[\w\-]{2,}$#", $name)){
+            return false;
+        }
+        $this->firstname = $name;
+        return true;
+    }
+
+    public function getFirstname(){
+        
+        return $this->firstname;
+    }
+
+    public function setLastname($last_name){
+        if(!preg_match("#^[\w\-]{3,}$#", $last_name)){
+            return false;
+        }
+        $this->lastname = $last_name;
+        return true;
+    }
+
+    public function getLastname(){
+        
+        return $this->lastname;
+    }
+
+    public function setSignature($signature){
+        
+        if(!preg_match("#^[\w\s\-\.]{6,}$#", $signature)){
             return false;
         }
 
-        $this->_adresse = $adresse;
+        $this->signature = $signature;
         return true;
     }
 
-    public function setNumTel($numtel){
-        if(!preg_match("#^[\d\.]{14}$#", $numtel)){
+    public function getSignature(){
+        
+        return $this->signature;
+    }
+
+    public function setCreated($created){
+        
+        $this->created = $created;
+    }
+
+    public function getCreated(){
+        
+        return $this->created;
+    }
+
+    public function setConnected($connected){
+        
+        $_SESSION['id'] = $connected;
+        $this->connected = $connected;
+    }
+
+    public function getConnected(){
+        
+        return $this->connected;
+    }
+
+    public function setNavigated($navigated){
+        
+        $this->navigated = $navigated;
+    }
+
+    public function getNavigated(){
+        
+        return $this->navigated;
+    }
+
+    public function setIp($ip){
+        if(!preg_match("#^[\d\.]{1,3}$#", $ip)){
             return false;
         }
-        $this->_numtel = $numtel;
-        return true;
+
+        $this->ip = $ip;
+        return true;           
     }
 
-    public function setCompteFb($comptefb){
-        $this->_comptefb = $comptefb;
-        return true;
+    public function getIp(){
+        
+        return $this->ip;
     }
+
+    public function setStatus($status){
+        $status = false;
+        $this->status = $status;
+    }
+
+    public function getstatus(){
+        
+        return $this->status;
+    }
+
+    public function setBantime($bantime){
+    
+        if(!preg_match("#^[\d]$#", $bantime)){
+            return false;
+        }    
+        $this->bantime = $bantime;
+        return true;
+    
+    }
+
+    public function getBantime(){
+        
+        return $this->bantime;
+    }
+
     public function insert()
     {
-        $req = "INSERT INTO administrateur(adresse, numtel, email, comptefb,password,pseudo) 
-        VALUES('".$this->_adresse."','".$this->_numtel."','".$this->_email."',
-            '".$this->_comptefb."', '" . md5($this->_password) . "','".$this->_pseudo."')";
-        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        if(!$res) return false;
-        $this->_id = mysqli_insert_id();
-        return true;
+        $req = "INSERT INTO admin(
+                email
+                , nickname
+                , password
+                , first_name
+                , last_name
+                , created
+                , status
+            ) VALUES (
+                '".$this->email."'
+                , '".$this->nickname."'
+                , '" . _sha4($this->password) . "'
+                , '" . $this->firstname . "'
+                , '" . $this->lastname . "'
+                , NOW()
+                , '1'
+            )";
+        return Database::_exec($req);
+    }
+
+    public function update(){
+        $req = "
+            UPDATE user
+            SET `password` = '".$this->password."',
+                `first_name` = '".$this->firstname."',
+                `last_name` = '".$this->lastname."',
+                `signature` = '".$this->signature."',
+                `connected` = '".$this->connected."',
+                `navigated` = '".$this->navigated."',
+                `ip` = '".$this->ip."'
+                `status` = '".$this->status."',
+                `bantime` = '".$this->bantime."'
+            WHERE `uid` = '".$this->uid."'
+        ";
+        return Database::_exec($req);
+    }
+
+    public function delete(){
+        $req = "DELETE FROM admin WHERE uid = '". $this->uid ."'";
+        return Database::_exec($req);
+    }
+
+    public function create($post){
+        $this->nickname = $post['signup_nick'];
+        $this->email = $post['signup_mail'];
+        $this->password = $post['signup_pass'];
+        $this->insert();
     }
 
     public function checkPassword($password)
     {
-        if (md5($password) != $this->_password) {
+        if (_sha4($password) != $this->password) {
             return false;
         }
         return true;
     }
 
-    /*public function isAdmin()
-    {
-        if($this->_admin != 1) {
-            return false;
-        } 
-        return true;
-    }*/
-
-   static public function exist($u = null) 
+    static public function _exist($u = null) 
     {
         if (!is_null($u)) 
         {
-            if (is_numeric($u)) $where = "id_admin = '" . intval($u) . "'";
-            else if (is_string($u)) $where = "pseudo = '$u'";
+            if (VerifMail($u)) $where = "email = '$u'";
+            else if (is_numeric($u)) $where = "uid = '" . intval($u) . "'";
+            else if (VerifName($u)) $where = "nickname = '$u'";
             else return false;
             
-            $req = "SELECT id_admin FROM administrateur WHERE " . $where;
-            $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-            if (mysqli_num_rows($res) > 0) return true;
-            else return false;
+            $req = "SELECT COUNT(1) FROM admin WHERE " . $where;
+            if (Database::_selectOne($req) > 0) return true;
         }
-        return true;
-    }
+        return false;
+    }        
 }
