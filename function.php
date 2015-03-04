@@ -51,15 +51,93 @@ function head($title)
 
 function switchMenu()
 {
-    $u = isset($_SESSION['id'])? new Administrateur($_SESSION['id']):new Administrateur();
+    $u = isset($_SESSION['id'])? new Admin($_SESSION['id']):new Admin();
     if (isConnected()) {
-        echo '
-            yolo
-        ';
+        echo $_SESSION['id'];
     }else{
         echo '
             <li><a href="login.php">Connexion</a>
             </li>
         ';
     }
+}
+
+function checkPassword($pswd = null) 
+{
+    if (is_null($pswd)) return false;
+    if (!preg_match("#^[\w\.\#\-\s]{6,}$#", $pswd)) 
+    {
+        return false;
+    }
+    return true;
+}
+
+function have_log(){
+    if(!isset($GLOBALS['_messages'])) return false;
+
+    global $_messages;
+    if(!empty($_messages)) return true;
+    return false;
+}
+
+function _sha4($str){
+    return hash('sha256', $str);
+}
+
+/**
+ *  Add an error to log messages
+ *
+ *  @param string $log logs
+ *  @param string $message the error message
+ *  @since 0.1
+ */
+function add_error(&$log, $message){
+    if(!is_array($log)) return;
+
+    $log[] = array(
+        "type" => "error",
+        "message" => $message
+    );
+}
+
+/**
+ *  Add a success to log messages
+ *
+ *  @param string $log logs
+ *  @param string $message the error message
+ *  @since 0.1
+ */
+function add_success(&$log, $message){
+    if(!is_array($log)) return;
+
+    $log[] = array(
+        "type" => "success",
+        "message" => $message
+    );
+}
+
+function form_signup($post){
+    $a = array(
+        'signup_nick' => 'checkNickname'
+        , 'signup_mail' => 'checkEmail'
+    );
+
+    return _form($post, $a);
+}
+
+
+function _form($post, $verif){
+    foreach ($verif as $k => $v) {
+        if(!isset($post[$k])) return false;
+        if((function_exists($v) 
+                && $v($post[$k]))
+            || preg_match("#$v#", $post[$k])
+        ){
+            continue;
+        }else{
+            var_dump($post[$k]);
+            return false;
+        }
+    }
+    return true;
 }

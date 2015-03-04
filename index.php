@@ -1,7 +1,5 @@
 <?php
-
 require "require.php";
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -10,7 +8,7 @@ require "require.php";
 	<title>Accueil</title>
     <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Diplomata+SC' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style_index.css">
 	<script src="jquery-1.3.2.min.js"></script>
 	<script src="script.js"></script>
 	<style>
@@ -34,17 +32,17 @@ require "require.php";
 				<li class="bouton_droite"><a href="contact.html">
 							<font color="black"><b>Contact</b></font></a></li>
 				<li class="bouton_droite"><a href="face.php">
-							<img src="iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
+							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
 				<?php
 					switchMenu();
 				?>
 				<li class="bouton_droite"><a href="login.php">
-							<img src="iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
+							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
 		
 			</ul>
 		</div>
 		<div class="sous_cadre">
-		<img src="sous_cadre.jpg"/>
+		<img src="images/sous_cadre.jpg"/>
 			<div class="titre">
 			<p><font face="georgia"><strong>Rock Your Chance<strong></font></p>
 			</div>
@@ -77,8 +75,8 @@ require "require.php";
 					</ul>
 				</div>
 				<center>
-					<a href="https://twitter.com/?lang=fr" title="Twitter"><img src="002.png"></a>
-					<a href="https://www.facebook.com/" title="Facebook"><img src="3378 - Copie.png"></a>
+					<a href="https://twitter.com/?lang=fr" title="Twitter"><img src="images/002.png"></a>
+					<a href="https://www.facebook.com/" title="Facebook"><img src="images/3378 - Copie.png"></a>
 					<p>Copyright &copy;2014 - 2015 RockYourChance PrivacyPolicy</p>
 				</center>
 			</div>
