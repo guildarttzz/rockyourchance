@@ -76,6 +76,16 @@ list-style-type : none; /* Car sinon les puces se placent n'importe où */
 	margin-top:-70px;
 
 }
+
+.centrer{
+	margin-left:650px;
+	margin-top:10px;
+
+}
+
+h1{
+	margin-left: 400px;
+}
    
    
    
