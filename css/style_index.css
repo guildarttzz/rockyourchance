@@ -27,6 +27,12 @@ list-style-type : none; /* Car sinon les puces se placent n'importe où */
 	padding: 1px;
 	background: #BDBDBD;
 	}
+	
+li.bouton_gauche, li.bouton_droite {
+	border-right: 2px solid black;
+	border left: 2px solid black;
+}
+
 .containerHoriz{
 	font-size: 20px;
 	background: #585858;
