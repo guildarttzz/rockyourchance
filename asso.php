@@ -1,3 +1,6 @@
+<?php
+require "require.php";
+?>
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -5,7 +8,7 @@
 		<title>Accueil</title>
 	    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Diplomata+SC' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="style-asso.css">
+		<link rel="stylesheet" href="css/style-asso.css">
 		<script src="jquery-1.3.2.min.js"></script>
 		<script src="script.js"></script>
 		<style>
