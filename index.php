@@ -49,9 +49,14 @@ require "require.php";
 			<p><font face="georgia"><strong>Rock Your Chance<strong></font></p>
 			</div>
 			<div class="sous_titre">
-			<p><font face="georgia">Culture hardrock</font></p>
-			<p></p>
+			<p><font face="georgia">Culture hardrock</font></p><br />
+
 		</div>
+			<p><h1>Découvrez aujourd’hui les groupes de demain !</h1><br />
+				Beaucoup de groupes sont passés sur les planches de RockYourChance, 
+				certains plus connus que d’autres, certains plus bruyants que d’autres… 
+				Mais tous viennent ici partager leur passion, notre passion: LA MUSIQUE.
+			</p>
 	</div>
 	
 
