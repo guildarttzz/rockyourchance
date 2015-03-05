@@ -38,7 +38,7 @@ require "require.php";
 					switchMenu();
 				?>
 				<li class="bouton_droite"><a href="login.php">
-						<a href="deconexion.php">
+						<a href="logout.php">
 							<img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
 					</a></li>
 						<a href="parametre.php">
