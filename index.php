@@ -50,7 +50,7 @@ require "require.php";
 			<p><font face="georgia">Culture hardrock</font></p><br />
 
 		</div>
-			<p><h1>Découvrez aujourd’hui les groupes de demain !</h1><br />
+			<p class="centrer"><h1>Découvrez aujourd’hui les groupes de demain !</h1><br />
 				Beaucoup de groupes sont passés sur les planches de RockYourChance, 
 				certains plus connus que d’autres, certains plus bruyants que d’autres… 
 				Mais tous viennent ici partager leur passion, notre passion: LA MUSIQUE.
@@ -62,13 +62,13 @@ require "require.php";
 			<div class="container1">
 				<div class="containerHoriz">
 				 	<ul id="menu_horizontal">
-						<li class="bouton_gauche"><a href="Plandusite.php">
+						<li class="bouton_gauche"><a href="index.php">
 									<font color="black"><b>Plan du Site</b></font></a></li>
 						<li class="bouton_gauche"><a href="Prog.php">
 									<font color="black"><b>Programmation</b></font></a></li>
 						<li class="bouton_gauche"><a href="galerie.php">
 									<font color="black"><b>Galerie</b></font></a></li>
-						<li class="bouton_droite"><a href="l'asso.php">
+						<li class="bouton_droite"><a href="asso.php">
 									<font color="black"><b>L'Asso</b></font></a></li>
 						<li class="bouton_droite"><a href="contact.php">
 									<font color="black"><b>Contact</b></font></a></li>

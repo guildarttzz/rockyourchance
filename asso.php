@@ -18,20 +18,20 @@ require "require.php";
 	<div class="container">
 		 <div class="containerHoriz">
 		 	<ul id="menu_horizontal">
-				<li class="bouton_gauche"><a href="index.html">
+				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
-				<li class="bouton_gauche"><a href="Prog.php">
+				<li class="bouton_gauche"><a href="prog.php">
 							<font color="black"><b>Programmation</b></font></a></li>
 				<li class="bouton_gauche"><a href="galerie.php">
 							<font color="black"><b>Galerie</b></font></a></li>
-				<li class="bouton_droite"><a href="l'asso.php">
+				<li class="bouton_droite"><a href="asso.php">
 							<font color="black"><b>L'Asso</b></font></a></li>
 				<li class="bouton_droite"><a href="contact.php">
 							<font color="black"><b>Contact</b></font></a></li>
 				<li class="bouton_droite"><a href="face.php">
-							<img src="iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
-				<li class="bouton_droite"><a href="face.php">
-							<img src="iconeparam.jpg" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
+							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
+				<li class="bouton_droite"><a href="login.php">
+							<img src="images/iconeparam.jpg" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
 		
 			</ul>
 		</div>
@@ -39,7 +39,7 @@ require "require.php";
 			<div class="canvas">
 				<h1>RockYourChance</h1>
 				<p class="flotte">
-				 	<img src="guitare.jpg"/>
+				 	<img src="images/guitare.jpg"/>
 				</p>
 				<p>
 				 	L’association RockYourChance  participe à l’organisation d’événements à Aix-en-Provence et développe des projets d’action culturelle en direction du jeune public.
@@ -66,8 +66,8 @@ require "require.php";
 					</ul>
 				</div>
 				<center>
-					<a href="https://twitter.com/?lang=fr" title="Twitter"><img src="002.png"></a>
-					<a href="https://www.facebook.com/" title="Facebook"><img src="3378 - Copie.png"></a>
+					<a href="https://twitter.com/?lang=fr" title="Twitter"><img src="images/002.png"></a>
+					<a href="https://www.facebook.com/" title="Facebook"><img src="images/3378 - Copie.png"></a>
 					<p>Copyright &copy;2014 - 2015 RockYourChance PrivacyPolicy</p>
 				</center>
 			</div>

@@ -33,11 +33,11 @@
 }
 .pp_next{
 	right:-40px;
-	background:#222 url(next.png) no-repeat center center;
+	background:#222 url(images/next.png) no-repeat center center;
 }
 .pp_prev{
 	left:-40px;
-	background:#222 url(prev.png) no-repeat center center;
+	background:#222 url(images/prev.png) no-repeat center center;
 }
 #pp_thumbContainer{
 	position:fixed;
