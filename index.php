@@ -33,11 +33,19 @@ require "require.php";
 							<font color="black"><b>Contact</b></font></a></li>
 				<li class="bouton_droite"><a href="face.php">
 							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
+
 				<?php
 					switchMenu();
 				?>
 				<li class="bouton_droite"><a href="login.php">
-							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
+					<a href="deconexion.php">
+						<img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
+					</a></li>
+					<a href="parametre.php">
+						<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" />
+					</a>
+
+	
 		
 			</ul>
 		</div>
