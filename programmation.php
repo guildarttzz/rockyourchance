@@ -25,7 +25,7 @@ require "require.php";
 		 	<ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
-				<li class="bouton_gauche"><a href="Prog.php">
+				<li class="bouton_gauche"><a href="programmation.php">
 							<font color="black"><b>Programmation</b></font></a></li>
 				<li class="bouton_gauche"><a href="galerie.php">
 							<font color="black"><b>Galerie</b></font></a></li>
@@ -38,6 +38,7 @@ require "require.php";
 				<?php
 					switchMenu();
 				?>
+<<<<<<< HEAD
 					<li class="bouton_droite"><a href="login.php">
 						<a href="deconexion.php">
 							<img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
@@ -46,6 +47,11 @@ require "require.php";
 							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" />
 					</a>
 				</li>
+=======
+				<li class="bouton_droiteparam"><a href="login.php">
+							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="10" Align="right" /></p></a></li>
+		
+>>>>>>> 9f99e65f7adb76ca28d8f7b0fbf33bef4d20edbd
 			</ul>
 		</div>
 		<div id="Divhaut">
