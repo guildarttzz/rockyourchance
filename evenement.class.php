@@ -3,7 +3,7 @@
 class Evenement{
 
 
-    private $date;
+    private $date_event;
     private $nom_grp;
     private $id_event;
 
@@ -11,22 +11,21 @@ class Evenement{
     public function __construct($id_event = 0){
 
 
-        if(self::_exist($id_event)){
-            if (is_numeric($id_event)){
-                $req = "SELECT * FROM evenement WHERE id_event = '$id_event'";
-            }
-
-            foreach(Database::_query($req) as $a){
-                $this->id_event = $a['id_event'];
+       if ($id_event > 0) {
+            $this->setIdEvent($id_event);
+            $req = " SELECT * FROM evenement WHERE id_event = $id_event ";
+            $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
+            while($a = mysqli_fetch_assoc($res)){
+                $this->id = $a['id_event'];
                 $this->nom_grp = $a['nom_grp'];
-                $this->date = $a['date'];
-            }
-        }else{
-
+                $this->date = $a['date_event'];            }
+        } else
+        {
             $this->id_event = 0;
             $this->nom_grp = 0;
-            $this->date = 0;
+            $this->date_event = 0;
         }
+    
     }
 
 
@@ -35,9 +34,9 @@ class Evenement{
      *
      * @return mixed
      */
-    public function getDate()
+    public function getDateEvent()
     {
-        return $this->date;
+        return $this->date_event;
     }
 
     /**
@@ -47,9 +46,9 @@ class Evenement{
      *
      * @return self
      */
-    public function setDate($date)
+    public function setDateEvent($date_event)
     {
-        $this->date = $date;
+        $this->date_event = $date_event;
 
         return $this;
     }
@@ -103,27 +102,21 @@ class Evenement{
     }
 
     public function jointure(){
-        $req = "
-                    SELECT nom_grp g
-                    FROM evenement e, grp g
-                    WHERE e.nom_grp == g.nom_grp;         
-                ";
+       $req = "SELECT nom_grp g
+                FROM evenement e, grp g
+                WHERE e.nom_grp = g.nom_grp
+               ";
+        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
+        if(!$res) return false;
 
-        $this->nom_grp = Database::_exec($req);
+        $this->nom_grp = $res;
     }
 
 
     public function insert(){
-         $req = "INSERT INTO evenement(
-            nom_grp
-            date_event
-            )VALUES(
-            '".$this->nom_grp."',
-            NOW()
-            )";
-
-
-        return Database::_exec($req);
+         $req = "INSERT INTO evenement(nom_grp,date_event) VALUES('".$this->nom_grp."',NOW())";
+        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
+        if(!$res) return false;
     }
 
 

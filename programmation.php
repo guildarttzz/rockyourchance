@@ -25,7 +25,7 @@ require "require.php";
 		 	<ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
-				<li class="bouton_gauche"><a href="Prog.php">
+				<li class="bouton_gauche"><a href="programmation.php">
 							<font color="black"><b>Programmation</b></font></a></li>
 				<li class="bouton_gauche"><a href="galerie.php">
 							<font color="black"><b>Galerie</b></font></a></li>
@@ -34,12 +34,12 @@ require "require.php";
 				<li class="bouton_droite"><a href="contact.php">
 							<font color="black"><b>Contact</b></font></a></li>
 				<li class="bouton_droite"><a href="face.php">
-							<img src="iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
+							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
 				<?php
 					switchMenu();
 				?>
 				<li class="bouton_droiteparam"><a href="login.php">
-							<img src="iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="10" Align="right" /></p></a></li>
+							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="10" Align="right" /></p></a></li>
 		
 			</ul>
 		</div>
