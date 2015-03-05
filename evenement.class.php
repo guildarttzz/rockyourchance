@@ -105,8 +105,8 @@ class Evenement{
     public function jointure(){
         $req = "
                     SELECT nom_grp g
-                    FROM event e, grp g
-                    WHERE e.nom_grp = g.nom_grp;         
+                    FROM evenement e, grp g
+                    WHERE e.nom_grp == g.nom_grp;         
                 ";
 
         $this->nom_grp = Database::_exec($req);
@@ -114,12 +114,29 @@ class Evenement{
 
 
     public function insert(){
-         $req = "INSERT INTO event(
+         $req = "INSERT INTO evenement(
             nom_grp
+            date_event
             )VALUES(
-            '".$this->nom_grp."'
+            '".$this->nom_grp."',
+            NOW()
             )";
+
+
+        return Database::_exec($req);
     }
 
 
+    static public function _exist($u = null) 
+    {
+        if (!is_null($u)) 
+        {
+            if (VerifName($u)) $where = "nom_grp = '$u'";
+            else{
+                return false;
+            } 
+    }        
+
+
+    }
 }

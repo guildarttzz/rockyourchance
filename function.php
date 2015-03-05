@@ -51,9 +51,9 @@ function head($title)
 
 function switchMenu()
 {
-    $u = isset($_SESSION['id'])? new Admin($_SESSION['id']):new Admin();
+    $u = isset($_SESSION['id'])? new Utilisateur($_SESSION['id']):new Utilisateur();
     if (isConnected()) {
-        echo $_SESSION['id'];
+        echo 'Bonjour '.$u->getPseudo();
     }else{
         echo '
             <li><a href="login.php">Connexion</a>
