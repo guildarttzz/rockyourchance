@@ -23,7 +23,7 @@ require "require.php";
 		 	<ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
-				<li class="bouton_gauche"><a href="Prog.php">
+				<li class="bouton_gauche"><a href="programmation.php">
 							<font color="black"><b>Programmation</b></font></a></li>
 				<li class="bouton_gauche"><a href="galerie.php">
 							<font color="black"><b>Galerie</b></font></a></li>
@@ -72,7 +72,7 @@ require "require.php";
 				 	<ul id="menu_horizontal">
 						<li class="bouton_gauche"><a href="index.php">
 									<font color="black"><b>Plan du Site</b></font></a></li>
-						<li class="bouton_gauche"><a href="Prog.php">
+						<li class="bouton_gauche"><a href="programmation.php">
 									<font color="black"><b>Programmation</b></font></a></li>
 						<li class="bouton_gauche"><a href="galerie.php">
 									<font color="black"><b>Galerie</b></font></a></li>

@@ -20,7 +20,7 @@ require "require.php";
 		 	<ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
-				<li class="bouton_gauche"><a href="prog.php">
+				<li class="bouton_gauche"><a href="programmation.php">
 							<font color="black"><b>Programmation</b></font></a></li>
 				<li class="bouton_gauche"><a href="galerie.php">
 							<font color="black"><b>Galerie</b></font></a></li>
@@ -30,7 +30,11 @@ require "require.php";
 							<font color="black"><b>Contact</b></font></a></li>
 				<li class="bouton_droite"><a href="face.php">
 							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
+							<?php
+					switchMenu();
+				?>
 				<li class="bouton_droite"><a href="login.php">
+
 							<img src="images/iconeparam.jpg" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" /></p></a></li>
 		
 			</ul>
@@ -55,11 +59,11 @@ require "require.php";
 				 	<ul id="menu_horizontal">
 						<li class="bouton_gauche"><a href="Plandusite.php">
 									<font color="black"><b>Plan du Site</b></font></a></li>
-						<li class="bouton_gauche"><a href="Prog.php">
+						<li class="bouton_gauche"><a href="programmation.php">
 									<font color="black"><b>Programmation</b></font></a></li>
 						<li class="bouton_gauche"><a href="galerie.php">
 									<font color="black"><b>Galerie</b></font></a></li>
-						<li class="bouton_droite"><a href="l'asso.php">
+						<li class="bouton_droite"><a href="asso.php">
 									<font color="black"><b>L'Asso</b></font></a></li>
 						<li class="bouton_droite"><a href="contact.php">
 									<font color="black"><b>Contact</b></font></a></li>
