@@ -117,6 +117,7 @@ class Evenement{
          $req = "INSERT INTO evenement(nom_grp,date_event) VALUES('".$this->nom_grp."',NOW())";
         $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
         if(!$res) return false;
+        return true;
     }
 
 
