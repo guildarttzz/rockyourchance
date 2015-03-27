@@ -3,6 +3,7 @@ body  {
   background-color:grey;
   background-image:url(Background01.jpg);/* une belle image de font que j'ai fait moi même */
   position: relative;
+  text-align: center;
 }
 
 /* Je sélectionne les <li> du menu horizontal */
@@ -161,7 +162,25 @@ li.bouton_gauche, li.bouton_droite {
 	border-bottom: 3px solid white;
 }
 
+.menu a.button,
+  .menu button,
+  nav a.button,
+  nav button {
+    padding: 6px;
+    margin: 4px; }
 
+.rounded, .breadcrumbs.arrow.rounded ul {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.info {
+  background: #4FA7E2 !important; }
+
+#url{
+	font-size: 20px;
+}
 
    
  /* 
