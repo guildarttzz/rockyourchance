@@ -56,7 +56,7 @@ function switchMenu()
         echo 'Bonjour '.$u->getPseudo();
     }else{
         echo '
-            <li><a href="login.php">Connexion</a>
+            <li><a  style=\"color:#000\" href="login.php">Connexion</a>
             </li>
         ';
     }

@@ -135,8 +135,18 @@ class Evenement{
     }
 
     static public function _getEvent(){
+        $r=array();
+        $req = "SELECT * FROM evenement";
+        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
+        while($a = mysqli_fetch_assoc($res)) 
+        {
+            $r[] = $a;
+        }
+        if(!$res){
+            return false;
+        }
 
-        
+        return $r;
 
         
     }

@@ -35,15 +35,15 @@ require "require.php";
 							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
 
 				<?php
-					switchMenu();
-				?>
+switchMenu();
+?>
 				<li class="bouton_droite"><a href="login.php">
 						<a href="logout.php">
 							<img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
-					</a></li>
+						</a>
 						<a href="parametre.php">
 							<img src="images/iconeparam.png" alt="paramètre" VSPACE="5" HSPACE="5" Align="right" />
-					</a>
+						</a>
 				</li>
 	
 		
