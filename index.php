@@ -20,7 +20,7 @@ require "require.php";
 
 	<div class="container">
 		 <div class="containerHoriz">
-		 	<ul id="menu_horizontal">
+             <ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">
 							<font color="black"><b>Accueil</b></font></a></li>
 				<li class="bouton_gauche"><a href="programmation.php">
@@ -35,8 +35,8 @@ require "require.php";
 							<img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
 
 				<?php
-switchMenu();
-?>
+                    switchMenu();
+                ?>
 				<li class="bouton_droite"><a href="login.php">
 						<a href="logout.php">
 							<img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
@@ -47,22 +47,27 @@ switchMenu();
 				</li>
 	
 		
-			</ul>
-		</div>
+             </ul>
+         </div>
 		<div class="sous_cadre">
 		<img src="images/sous_cadre.jpg" class="background"/>
 			<div class="titre">
-			<p class="Title01"><font face="georgia"><strong>Rock Your Chance<strong></font></p>
+			    <p><font face="georgia"><strong>Rock Your Chance<strong></font></p>
 			</div>
 			<div class="sous_titre">
-			<p><font face="georgia">Culture hardrock</font></p><br />
+			    <p><font face="georgia">Culture hardrock</font></p><br />
 
-		</div>
-			<p class="centrer"><h1>Découvrez aujourd’hui les groupes de demain !</h1><br />
-				Beaucoup de groupes sont passés sur les planches de RockYourChance, 
-				certains plus connus que d’autres, certains plus bruyants que d’autres… 
-				Mais tous viennent ici partager leur passion, notre passion: LA MUSIQUE.
-			</p>
+		    </div>
+            <div class="titre02">
+			<p><h1>
+                Découvrez aujourd’hui les groupes de demain !
+            </h1>
+            <br />
+				    Beaucoup de groupes sont passés sur les planches de RockYourChance,
+			    	certains plus connus que d’autres, certains plus bruyants que d’autres…
+			    	Mais tous viennent ici partager leur passion, notre passion: LA MUSIQUE.
+            </p>
+            </div>
 	</div>
 	
 
