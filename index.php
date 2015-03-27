@@ -50,9 +50,9 @@ require "require.php";
 			</ul>
 		</div>
 		<div class="sous_cadre">
-		<img src="images/sous_cadre.jpg"/>
+		<img src="images/sous_cadre.jpg" class="background"/>
 			<div class="titre">
-			<p><font face="georgia"><strong>Rock Your Chance<strong></font></p>
+			<p class="Title01"><font face="georgia"><strong>Rock Your Chance<strong></font></p>
 			</div>
 			<div class="sous_titre">
 			<p><font face="georgia">Culture hardrock</font></p><br />
