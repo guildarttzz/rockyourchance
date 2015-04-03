@@ -9,7 +9,7 @@ if(isset($_POST['nom'])){
     }elseif (!$event->insert()) {
         echo "Il y a un problème à l'insertion";
     }else{
-        echo "Tout s\'est bien passé";
+        header('Location: index.php');
     }
 }
 

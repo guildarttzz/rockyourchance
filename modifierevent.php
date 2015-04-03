@@ -23,7 +23,7 @@ if (!$_SESSION['id'])
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
          <div class="containerHoriz">
             <ul id="menu_horizontal">
                 <li class="bouton_gauche"><a href="index.php">
@@ -39,8 +39,8 @@ if (!$_SESSION['id'])
                 <li class="bouton_droite"><a href="face.php">
                             <img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
                 <?php
-switchMenu();
-?>
+                    switchMenu();
+                ?>
 
                         <a href="logout.php">
                             <img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
@@ -65,14 +65,33 @@ switchMenu();
             </span>
             <br />
         </div>
-        <div id="url">
-           <a class="button info rounded" href="connexion.php">Créer un compte</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="modifierevent.php">Modifier un événement</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="creation_evenement.php">Créer un événement</a>
+    <?php
+    foreach (Evenement::_getEvent() as $v) {
+        echo    " <a href=\"eventgrp.php?grp=" . $v['nom_grp'] . "\">".$v['nom_grp']."</a><br/>";
+    }
+    ?>
+    <footer class="moncadre">
+        <div class="container1">
+            <div class="containerHoriz">
+                        <ul id="menu_horizontal">
+                            <li class="bouton_gauche"><a href="Plandusite.php">
+                                        <font color="black"><b>Plan du Site</b></font></a></li>
+                            <li class="bouton_gauche"><a href="programmation.php">
+                                        <font color="black"><b>Programmation</b></font></a></li>
+                            <li class="bouton_gauche"><a href="galerie.php">
+                                        <font color="black"><b>Galerie</b></font></a></li>
+                            <li class="bouton_droite"><a href="asso.php">
+                                        <font color="black"><b>L'Asso</b></font></a></li>
+                            <li class="bouton_droite"><a href="contact.php">
+                                        <font color="black"><b>Contact</b></font></a></li>
+                        </ul>
+            </div>
+            <center>
+                <a href="https://twitter.com/?lang=fr" title="Twitter"><img src="images/002.png"></a>
+                <a href="https://www.facebook.com/" title="Facebook"><img src="images/3378 - Copie.png"></a>
+                <p>Copyright &copy;2014 - 2015 RockYourChance PrivacyPolicy</p>
+            </center>
         </div>
+    </footer>
 </body>
 </html>
