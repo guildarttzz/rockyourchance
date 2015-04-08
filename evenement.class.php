@@ -150,14 +150,13 @@ class Evenement{
   
     }
 
-   static public function _getOneEvent(){
+   public function _getOneEvent(){
     echo "bauifbiabfiabzfabf";
         $req = "SELECT * 
                 FROM evenement
                 WHERE id_event = '".$this->id_event."'";
 
         $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        echo $res;
         if(!$res){
             return false;
         }
