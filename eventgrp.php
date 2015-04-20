@@ -1,10 +1,5 @@
 <?php
 require "require.php";
-
-if (!$_SESSION['id']) 
-{
-    header('Location: index.php');
-}
 ?>
 
 <!doctype html>
@@ -64,33 +59,19 @@ if (!$_SESSION['id'])
             </span>
             <br />
         </div>
-    <?php
-    foreach (Evenement::_getEvent() as $v) {
-        echo    " <a href=\"eventgrp.php?id=" . $v['id_event'] . "\">".$v['nom_grp']."</a><br/>";
-    }
-    ?>
-    <footer class="moncadre">
-        <div class="container1">
-            <div class="containerHoriz">
-                        <ul id="menu_horizontal">
-                            <li class="bouton_gauche"><a href="Plandusite.php">
-                                        <font color="black"><b>Plan du Site</b></font></a></li>
-                            <li class="bouton_gauche"><a href="programmation.php">
-                                        <font color="black"><b>Programmation</b></font></a></li>
-                            <li class="bouton_gauche"><a href="galerie.php">
-                                        <font color="black"><b>Galerie</b></font></a></li>
-                            <li class="bouton_droite"><a href="asso.php">
-                                        <font color="black"><b>L'Asso</b></font></a></li>
-                            <li class="bouton_droite"><a href="contact.php">
-                                        <font color="black"><b>Contact</b></font></a></li>
-                        </ul>
-            </div>
-            <center>
-                <a href="https://twitter.com/?lang=fr" title="Twitter"><img src="images/002.png"></a>
-                <a href="https://www.facebook.com/" title="Facebook"><img src="images/3378 - Copie.png"></a>
-                <p>Copyright &copy;2014 - 2015 RockYourChance PrivacyPolicy</p>
-            </center>
-        </div>
-    </footer>
+
+        <?php
+            if(isset($_GET['id'])){
+                $event = new Evenement();
+                $event->setIdEvent($_GET['id']);
+                $event->_getOneEvent();
+            }
+        ?>
+            
+        </textarea>
+
+    </div>
 </body>
 </html>
+
+

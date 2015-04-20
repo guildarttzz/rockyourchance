@@ -129,10 +129,10 @@ class Evenement{
             else{
                 return false;
             } 
-    }        
-
-
+        }  
     }
+
+
 
     static public function _getEvent(){
         $r=array();
@@ -147,7 +147,27 @@ class Evenement{
         }
 
         return $r;
-
-        
+  
     }
+
+   public function _getOneEvent(){
+    echo "bauifbiabfiabzfabf";
+        $req = "SELECT * 
+                FROM evenement
+                WHERE id_event = '".$this->id_event."'";
+
+        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
+        if(!$res){
+            return false;
+        }
+
+        return $res;
+
+    }
+    /*final public function update(){
+        $req = "UPDATE evenement
+                SET nom_grp= '" . $this->getNomGrp() . "'
+                    , date = 'NOW()'
+                WHERE id = '" . $this->getId() . "'"
+    };*/
 }
