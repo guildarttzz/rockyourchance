@@ -1,56 +1,48 @@
 body  {
-  color:black;
-  background-color:grey;
-  background-image:url(xxxxxxxxxx01.png);/* une belle image de font que j'ai fait moi même */
-  position: relative;
+    color:black;
+    background-color:grey;
+    background-image:url(Background01.jpg);/* une belle image de font que j'ai fait moi même */
+    position: relative;
 }
 
 /* Je sélectionne les <li> du menu horizontal */
-ul#menu_horizontal li { 
-display : inline;
-padding : 0px 30px; /* Pour espacer les boutons entre eux */
+ul#menu_horizontal li {
+    display : inline;
+    padding : 0px 30px; /* Pour espacer les boutons entre eux */
 }
 ul#menu_horizontal {
-list-style-type : none; /* Car sinon les puces se placent n'importe où */
+    list-style-type : none; /* Car sinon les puces se placent n'importe où */
 }
-	
+.menu-deroulant{
+    display: none;
+}
 
 
 .container{
-	background: #FFF;
-	width: 1400px;
-	margin-left:auto;
-	margin-right:auto;
-	min-height: 1200px;
-	position : relative;
-	left : 0px;
-	padding: 1px;
-	background: #BDBDBD;
-	}
+    background: #FFF;
+    width: 1400px;
+    margin-left:auto;
+    margin-right:auto;
+    min-height: 900px;
+    position : relative;
+    left : 0px;
+    padding: 1px;
+    background: #BDBDBD;
+}
+
+li.bouton_gauche, li.bouton_droite {
+    border-right: 2px solid black;
+    border left: 2px solid black;
+}
+
 .containerHoriz{
-	font-size: 20px;
-	background: #585858;
-	width: auto;
-	text-align : center;
-	height: 45px;
-	border-collapse: separate;
+    font-size: 20px;
+    background: #585858;
+    width: auto;
+    text-align : center;
+    height: 45px;
+    border-collapse: separate;
     border-spacing: 10px 10px;
-   }
-.canvas {
-	width: 800px;
-	margin-left:auto;
-	margin-right:auto;
-	min-height: 1000px;
-	position : relative;
-	left : 0px;
-	padding: 50px;
-}
-h1 {
-	 text-align: left;
-	 padding-left: 100px;
-}
-.flotte {
-	float: right;
 }
 #footer {
     position: absolute;
@@ -59,62 +51,260 @@ h1 {
 }
 
 #moncadre {
-	position: absolute;
+    position: absolute;
     width: 750px;
     bottom: 0;
     left: 10px;
-	background:#BDBDBD;
+    background:#BDBDBD;
 
 }
-.container1{
-	background: #FFF;
-	width: 1400px;
-	margin-left:auto;
-	margin-right:auto;
-	min-height: 100px;
-	position : relative;
-	left : 0px;
-	padding: 1px;
-	background: #585858;
-	}
 
- 
+.titre{
+    color:white;
+    font-size: 60px;
+    position:absolute;
+    top:360px;
+    width:600px;
+    height:400px;
+    z-index:2;
+    margin-left:500px;
+    margin-top:-150px;
+    text-shadow: black 2px 4px;
+}
+
+.sous_titre{
+
+    color:white;
+    font-size: 40px;
+    position:absolute;
+    top:380px;
+    width:600px;
+    height:400px;
+    z-index:2;
+    margin-left:650px;
+    margin-top:-70px;
+    text-shadow: black 1px 3px;
+
+}
+
+.titre02{
+    margin-top:10px;
+}
+h1{
+    text-align: center;
+}
+.saut{
+    display: none;
+}
+.imgguitare{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------RESPONSIVE HEHE !--------------------------------------------------------------------*/
+
 @media screen and (max-width: 1280px) {
-	.container {
-		width: 85%;
-		background-color:rgb(50,50,50)
-	}
-	.icone1{
-	display: none;
-	}
-	.menu{
-		position: relative;
-		top: 200px;
-		left: 80px;
-		display: block;
-		font-size: 75%;
-	}
-	.tableaucep2{
-	
-	}
-	.tablimg{
-	max-width: 700px;
-	min-width: 700px;
-	max-height: 700px;
-	display: block;
-	float: center;
-	}
-}
 
-@media screen and (max-width: 768px) {
-	.container {
-		width: 75%;
-		background-color:rgb(30,30,30);
-	}
+    body  {
+        color:black;
+        background-color:grey;
+        background-image:url(Background01.jpg);
+        position: relative;
+    }
+    ul#menu_horizontal li {
+        display : inline;
+        padding : 0px 30px;
+    }
+    ul#menu_horizontal {
+        list-style-type : none;
 
-}
+    }
+    .background{
+        width:100%;
+    }
+    .titre,.sous_titre{
+        margin-right: 1000px;
+        position: relative;
+        width: 50%;
+    }
+    .menu-deroulant{
+        display: none;
+    }
 
-@media screen and (max-width: 378px) {
-	.container {
-		width: 25%;
-		background-color:rgb(20,20,20);
+    .container{
+        background: #FFF;
+        width: 900px;
+        margin-left:auto;
+        margin-right:auto;
+        min-height: 960px;
+        position : relative;
+        left : 0px;
+        padding: 1px;
+        background: #BDBDBD;
+    }
+
+    li.bouton_gauche, li.bouton_droite {
+        width: 50%;
+        height: 50%;
+
+    }
+
+    .containerHoriz{
+        font-size: 20px;
+        background: #585858;
+        width: auto;
+        text-align : center;
+        height: 70px;
+        border-collapse: separate;
+        border-spacing: 10px 10px;
+    }
+    #footer {
+        position: absolute;
+        bottom: 0;
+
+    }
+
+    #moncadre {
+        position: absolute;
+        width: 500px;
+        bottom: 0;
+        left: 10px;
+        background:#BDBDBD;
+
+    }
+
+    .titre{
+        color:white;
+        font-size: 40px;
+        position:absolute;
+        top:360px;
+        width:500px;
+        height:400px;
+        z-index:2;
+        margin-left:250px;
+        margin-top:-150px;
+    }
+
+    .sous_titre{
+
+        color:white;
+        font-size: 20px;
+        position:absolute;
+        top:380px;
+        width:500px;
+        height:400px;
+        z-index:2;
+        margin-left:325px;
+        margin-top:-70px;
+
+    }
+
+    .titre02{
+
+        margin-top:10px;
+
+    }
+    h1{
+        text-align: center;
+    }
+    .saut{
+        display: block;
+    }
+
+
+
+    /*------------------------------------------RESPONSIVE ENCORE---------------------------------------*/
+
+
+    @media screen and (max-width: 750px) {
+        .container {
+            width: 75%;
+        }
+        .containerHoriz{
+            font-size: 20px;
+            background: #585858;
+            width: auto;
+            text-align : center;
+            height: 100px;
+            border-collapse: separate;
+            border-spacing: 10px 10px;
+            display: none;
+        }
+        .titre{
+            color:white;
+            font-size: 15px;
+            position:absolute;
+            top:300px;
+            width:500px;
+            height:400px;
+            z-index:2;
+            margin-left:40px;
+            margin-top:-150px;
+        }
+        .sous_titre{
+
+            color:white;
+            font-size: 10px;
+            position:absolute;
+            top:300px;
+            width:500px;
+            height:400px;
+            z-index:2;
+            margin-left:100px;
+            margin-top:-100px;
+
+        }
+        .menu-deroulant{
+            display: inline;
+            list-style-type : none;
+            font-size: small;
+
+        }
+        .menu-deroulant ul {
+            padding:0;
+            margin:0;
+            list-style-type:none;
+        }
+        .menu-deroulantli {
+            float:left; /*pour IE*/
+            border-left:1px solid black;
+        }
+        .menu-deroulant ul li a {
+            display:block;
+            float:left;
+            width: 20%;
+            line-height:50px; /*hauteur de l'image de fond*/
+            background: url(noir-1.png) repeat-x;
+            color:#DCDCDC;
+            text-decoration:none;
+            text-align:center;
+        }
+        .menu-deroulant ul li a:hover {
+            background: url(noir-2.png) repeat-x;
+            color:white;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

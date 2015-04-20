@@ -19,6 +19,16 @@ require "require.php";
 
 
 	<div class="container">
+        <ul class="menu-deroulant">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Programmation</a></li>
+                <li><a href="#">Galerie</a></li>
+                <li><a href="#">L'asso</a></li>
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+        </ul>
 		 <div class="containerHoriz">
 		 	<ul id="menu_horizontal">
 				<li class="bouton_gauche"><a href="index.php">

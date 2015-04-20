@@ -13,7 +13,9 @@ padding : 0px 30px; /* Pour espacer les boutons entre eux */
 ul#menu_horizontal {
 list-style-type : none; /* Car sinon les puces se placent n'importe où */
 }
-	
+.menu-deroulant{
+    display: none;
+}
 
 
 .container{
@@ -59,20 +61,21 @@ li.bouton_gauche, li.bouton_droite {
 
 .titre{
 	color:white;
-	font-size: 40px;
+	font-size: 60px;
 	position:absolute;
 	top:360px; 
 	width:600px; 
 	height:400px; 
 	z-index:2;
-	margin-left:550px;
+	margin-left:500px;
 	margin-top:-150px;
+    text-shadow: black 2px 4px;
 }
 
 .sous_titre{
 
 	color:white;
-	font-size: 20px;
+	font-size: 40px;
 	position:absolute;
 	top:380px; 
 	width:600px; 
@@ -80,6 +83,7 @@ li.bouton_gauche, li.bouton_droite {
 	z-index:2;
 	margin-left:650px;
 	margin-top:-70px;
+    text-shadow: black 1px 3px;
 
 }
 
@@ -89,12 +93,22 @@ li.bouton_gauche, li.bouton_droite {
 h1{
     text-align: center;
 }
+.saut{ display: none
+
+    }
+
+
+
 
    
    
-   
-   
- /* ------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+ /* --------------------------------------RESPONSIVE HEHE !--------------------------------------------------------------------*/
 
 @media screen and (max-width: 1280px) {
 
@@ -120,10 +134,10 @@ h1{
         position: relative;
         width: 50%;
     }
+    .menu-deroulant{
+        display: none;
+    }
 
-
-    
-    
     .container{
         background: #FFF;
         width: 900px;
@@ -134,6 +148,7 @@ h1{
         left : 0px;
         padding: 1px;
         background: #BDBDBD;
+
     }
 
     li.bouton_gauche, li.bouton_droite {
@@ -158,11 +173,14 @@ h1{
     }
 
     #moncadre {
-        position: absolute;
+        position: relative;
         width: 500px;
         bottom: 0;
         left: 10px;
         background:#BDBDBD;
+
+
+
 
     }
 
@@ -200,13 +218,23 @@ h1{
     h1{
         text-align: center;
     }
+    .face{
+        display: none;
+    }
+    .saut{
+        display: block;
+    }
+}
 
 
 
 
 
 
-    @media screen and (max-width: 768px) {
+/*------------------------------------------RESPONSIVE ENCORE---------------------------------------*/
+
+
+    @media screen and (max-width: 750px) {
 	    .container {
 		width: 75%;
 	    }
@@ -218,71 +246,71 @@ h1{
             height: 100px;
             border-collapse: separate;
             border-spacing: 10px 10px;
+            display: none;
         }
         .titre{
             color:white;
-            font-size: 25px;
+            font-size: 15px;
             position:absolute;
-            top:360px;
+            top:300px;
             width:500px;
             height:400px;
             z-index:2;
-            margin-left:100px;
+            margin-left:40px;
             margin-top:-150px;
         }
         .sous_titre{
 
             color:white;
-            font-size: 15px;
+            font-size: 10px;
             position:absolute;
-            top:380px;
-            width:500px;
-            height:400px;
-            z-index:2;
-            margin-left:225px;
-            margin-top:-100px;
-
-        }
-
-
-
-
-    @media screen and (max-width: 450px) {
-    	.container {
-    		width: 25%;
-        .containerHoriz{
-            font-size: 20px;
-            background: #585858;
-            width: auto;
-            text-align : center;
-            height: 130px;
-            border-collapse: separate;
-            border-spacing: 10px 10px;
-        }
-        .titre{
-            color:white;
-            font-size: 25px;
-            position:absolute;
-            top:360px;
+            top:300px;
             width:500px;
             height:400px;
             z-index:2;
             margin-left:100px;
-            margin-top:-150px;
-        }
-        .sous_titre{
-
-            color:white;
-            font-size: 15px;
-            position:absolute;
-            top:380px;
-            width:500px;
-            height:400px;
-            z-index:2;
-            margin-left:225px;
             margin-top:-100px;
 
         }
+        .menu-deroulant{
+            display: inline;
+            list-style-type : none;
+            font-size: small;
+
+        }
+        .menu-deroulant ul {
+            padding:0;
+            margin:0;
+            list-style-type:none;
+        }
+        .menu-deroulantli {
+            float:left; /*pour IE*/
+            border-left:1px solid black;
+        }
+        .menu-deroulant ul li a {
+            display:block;
+            float:left;
+            width: 20%;
+            line-height:50px; /*hauteur de l'image de fond*/
+            background: url(noir-1.png) repeat-x;
+            color:#DCDCDC;
+            text-decoration:none;
+            text-align:center;
+        }
+        .menu-deroulant ul li a:hover {
+            background: url(noir-2.png) repeat-x;
+            color:white;
+        }
+
+
+
+
+
+
+
+
+
+
 
 
 
