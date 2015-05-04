@@ -5,7 +5,7 @@ require "require.php";
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>Accueil</title>
+		<title>L'asso</title>
 	    <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Diplomata+SC' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style-asso.css">
