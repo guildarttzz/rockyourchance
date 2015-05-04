@@ -66,7 +66,7 @@ if (!$_SESSION['id'])
         </div>
     <?php
     foreach (Evenement::_getEvent() as $v) {
-        echo    " <a href=\"eventgrp.php?id=" . $v['id_event'] . "\">".$v['nom_grp']."</a><br/>";
+        echo    " <a href=\"eventgrp.php?id_event=" . $v['id_event'] . "\">".$v['nom_grp']."</a><br/>";
     }
     ?>
     <footer class="moncadre">

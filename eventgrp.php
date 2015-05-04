@@ -1,5 +1,12 @@
 <?php
 require "require.php";
+
+$event = new Evenement($_GET['id_event']);
+if(isset($_GET['id_event']) && isset($_POST['nomgrp'])){
+    $event->setNomGrp($_POST['nomgrp']);
+    $event->updateEvenement();
+    
+}
 ?>
 
 <!doctype html>
@@ -59,16 +66,16 @@ require "require.php";
             </span>
             <br />
         </div>
+        <form action="" method="post">
 
         <?php
-            if(isset($_GET['id'])){
-                $event = new Evenement();
-                $event->setIdEvent($_GET['id']);
-                $event->_getOneEvent();
-            }
+            echo '<input type="text" name="nomgrp" value="'. $event->getNomGrp() .'">
+            <br />
+            <input type="submit" value="Valider">';
         ?>
             
-        </textarea>
+        </form>
+       
 
     </div>
 </body>

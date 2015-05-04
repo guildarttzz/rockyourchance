@@ -9,18 +9,18 @@ class Evenement{
 
 
     public function __construct($id_event = 0){
-
+        $id_event = (int)$id_event;
 
        if ($id_event > 0) {
+        var_dump($id_event);
             $this->setIdEvent($id_event);
             $req = " SELECT * FROM evenement WHERE id_event = $id_event ";
-            $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-            while($a = mysqli_fetch_assoc($res)){
-                $this->id = $a['id_event'];
+            foreach (Database::_query($req) as $a) {
+                $this->id_event = $a['id_event'];
                 $this->nom_grp = $a['nom_grp'];
-                $this->date = $a['date_event'];            }
-        } else
-        {
+                $this->date = $a['date_event'];            
+            } 
+        } else {
             $this->id_event = 0;
             $this->nom_grp = 0;
             $this->date_event = 0;
@@ -106,8 +106,7 @@ class Evenement{
                 FROM evenement e, grp g
                 WHERE e.nom_grp = g.nom_grp
                ";
-        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        if(!$res) return false;
+        return Database::_exec($req);
 
         $this->nom_grp = $res;
     }
@@ -115,9 +114,7 @@ class Evenement{
 
     public function insert(){
          $req = "INSERT INTO evenement(nom_grp,date_event) VALUES('".$this->nom_grp."',NOW())";
-        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        if(!$res) return false;
-        return true;
+        return Database::_exec($req);
     }
 
 
@@ -137,13 +134,9 @@ class Evenement{
     static public function _getEvent(){
         $r=array();
         $req = "SELECT * FROM evenement ORDER BY date_event DESC";
-        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        while($a = mysqli_fetch_assoc($res)) 
+        foreach (Database::_query($req) as $a) 
         {
             $r[] = $a;
-        }
-        if(!$res){
-            return false;
         }
 
         return $r;
@@ -156,18 +149,17 @@ class Evenement{
                 FROM evenement
                 WHERE id_event = '".$this->id_event."'";
 
-        $res = mysqli_query($GLOBALS['db'], $req) or die(mysql_error() . '<br />Erreur dans le fichier ' . __FILE__ . ' à la ligne ' . __LINE__ . ' avec la requete : ' . $req);
-        if(!$res){
-            return false;
-        }
-
-        return $res;
+        return Database::_exec($req);
 
     }
-    /*final public function update(){
+    final public function updateEvenement() {
         $req = "UPDATE evenement
-                SET nom_grp= '" . $this->getNomGrp() . "'
-                    , date = 'NOW()'
-                WHERE id = '" . $this->getId() . "'"
-    };*/
+            SET  nom_grp = '" . $this->getNomGrp() . "'
+                , date_event = NOW()
+            WHERE id_event = '" . $this->getIdEvent() . "'
+        ";
+
+        $res = Database::_exec($req);
+        return $this;
+    }
 }
