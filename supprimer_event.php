@@ -1,11 +1,13 @@
 <?php
-require "require.php";
 
-if (!$_SESSION['id']) 
+require "require.php";
+if (isset($_GET['trashed'])) 
 {
-    echo "vous ne pouvez pas aller ici, vous n'êtes pas administrateur";
-    header('Location: index.php');
+    
+    Evenement::_deleteEvenement($_GET['evenement']);
+    header("Location: supprimer_event.php");
 }
+
 ?>
 
 <!doctype html>
@@ -16,14 +18,18 @@ if (!$_SESSION['id'])
     <link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Diplomata+SC' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/programmation.css">
-    <script src="jquery-1.3.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/leaframe.css">
+    <link rel="stylesheet" type="text/css" href="css/leaframe.min.css">
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="js/leaframe.min.js"></script>
+
     <script src="script.js"></script>
     <style>
     </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
          <div class="containerHoriz">
             <ul id="menu_horizontal">
                 <li class="bouton_gauche"><a href="index.php">
@@ -65,17 +71,31 @@ switchMenu();
             </span>
             <br />
         </div>
-        <div id="url">
-           <a class="button info rounded" href="connexion.php">Créer un compte</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="modifierevent.php">Modifier un événement</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="creation_evenement.php">Créer un événement</a>
-           <br />
-           <br />
-           <a class="supprimerArticle button error rounded" href="supprimer_event.php">Supprimer</a>
-        </div>
+        <table class="dif">
+            <thead>
+                <tr>
+                    <th>Evenement</th>
+                    <th>Suppresion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach (Evenement::_getEvent() as $v){
+                    
+                    echo "<tr>
+                        <td>".
+                        $v["nom_grp"].
+                        '</td>
+                        <td>
+                            <a class="supprimerArticle button error rounded"
+                                href="supprimer_event.php?evenement='.$v["id_event"].'&trashed=true">Supprimer
+                            </a>
+                            <br />
+                        </td>
+                    <tr>';
+                }
+                ?>
+            </tbody>
+    </div>
 </body>
 </html>

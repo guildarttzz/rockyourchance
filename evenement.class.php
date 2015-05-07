@@ -144,7 +144,6 @@ class Evenement{
     }
 
    public function _getOneEvent(){
-    echo "bauifbiabfiabzfabf";
         $req = "SELECT * 
                 FROM evenement
                 WHERE id_event = '".$this->id_event."'";
@@ -161,5 +160,24 @@ class Evenement{
 
         $res = Database::_exec($req);
         return $this;
+    }
+
+    public function deleteEvenement() {
+        Database::_beginTransaction();
+        
+        $req = "DELETE FROM evenement
+                WHERE id_event = '" . $this->id_event . "'";
+        $res = Database::_exec($req);
+        
+        if (!$res) {
+            Database::_rollBack();
+        } else {
+            Database::_commit();
+        }
+    }
+
+    static public function _deleteEvenement($id) {
+        $a = new Evenement($id);
+        $a->deleteEvenement();
     }
 }
