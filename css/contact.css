@@ -21,7 +21,7 @@ list-style-type : none; /* Car sinon les puces se placent n'importe où */
     width: 1400px;
     margin-left:auto;
     margin-right:auto;
-    min-height: 1200px;
+    min-height: 980;
     position : relative;
     left : 0px;
     padding: 1px;
@@ -258,9 +258,6 @@ li.bouton_gauche, li.bouton_droite {
         left: 10px;
         background:#BDBDBD;
 
-
-
-
     }
 
     .titre{
@@ -406,4 +403,12 @@ li.bouton_gauche, li.bouton_droite {
 
 .fichier{
     margin-left: 86px;
+}
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 75%;
+}
 }
