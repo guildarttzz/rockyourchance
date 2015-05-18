@@ -111,11 +111,7 @@ foreach (Evenement::_getEvent() as $v)
 				<td class="lignetable1">colonne 3 de la ligne 2</td>
 			</tr>
 		</table>
-	</div>		
-		
-		
-
-		
+	</div>
 		
 
 		<footer id="moncadre">
