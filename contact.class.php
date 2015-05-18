@@ -18,12 +18,12 @@ class Contact{
             $this->setIdContact($id_contact);
             $req = " SELECT * FROM contact WHERE id_contact = $id_contact ";
             foreach (Database::_query($req) as $a) {
-                $this->id = $a['id_contact'];
+                $this->id_contact = $a['id_contact'];
                 $this->nom_grp = $a['nom_grp'];
-                $this->id = $a['nom_membre'];                
-                $this->id = $a['email'];
-                $this->id = $a['spe'];
-                $this->id = $a['site'];            
+                $this->nom_membre = $a['nom_membre'];                
+                $this->email = $a['email'];
+                $this->spe = $a['spe'];
+                $this->site = $a['site'];            
             }
         } else {
             $this->id_contact = 0;
@@ -220,10 +220,6 @@ class Contact{
         {
             $r[] = $a;
         }
-        if(!$res){
-            return false;
-        }
-
         return $r;
       
     }
@@ -238,7 +234,8 @@ class Contact{
     final public function updateContact() {
         $req = "UPDATE contact
             SET  nom_grp = '" . $this->getNomGrp() . "',
-            email = '" . $this->getEmail() . "',
+            nom_membre = '". $this->getNomMembre() ."',
+            email = '" . $this->getEmail() . "', 
             spe = '" . $this->getSpe() . "',
             site = '" . $this->getSite() . "',                
             WHERE id_contact = '" . $this->getIdContact() . "'

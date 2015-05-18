@@ -1,10 +1,16 @@
 <?php
 require "require.php";
 
-if (!$_SESSION['id']) 
-{
-    echo "vous ne pouvez pas aller ici, vous n'êtes pas administrateur";
-    header('Location: index.php');
+$contact = new Contact($_GET['contact']);
+if(isset($_GET['contact']) && isset($_POST['nomgrp']) && isset($_POST['nommembre']) && isset($_POST['email'])
+     && isset($_POST['spe']) && isset($_POST['url'])){
+    $contact->setNomGrp($_POST['nomgrp']);
+    $contact->setNomMembre($_POST['nommembre']);
+    $contact->setEmail($_POST['email']);
+    $contact->setSpe($_POST['spe']);
+    $contact->setSite($_POST['url']);
+    $contact->updateContact();
+    
 }
 ?>
 
@@ -23,7 +29,7 @@ if (!$_SESSION['id'])
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
          <div class="containerHoriz">
             <ul id="menu_horizontal">
                 <li class="bouton_gauche"><a href="index.php">
@@ -39,8 +45,8 @@ if (!$_SESSION['id'])
                 <li class="bouton_droite"><a href="face.php">
                             <img src="images/iconeface.jpg" alt="Facebook" VSPACE="5" HSPACE="5" Align="center" /></a></li>
                 <?php
-switchMenu();
-?>
+                    switchMenu();
+                ?>
 
                         <a href="logout.php">
                             <img src="images/dcbutton.png" alt="paramètre"  VSPACE="5" HSPACE="5" Align="right" />
@@ -65,20 +71,15 @@ switchMenu();
             </span>
             <br />
         </div>
-        <div id="url">
-           <a class="button info rounded" href="connexion.php">Créer un compte</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="gestion-demande.php">Gestion des demandes</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="modifierevent.php">Modifier un événement</a>
-           <br />
-           <br />
-           <a class="button info rounded" href="creation_evenement.php">Créer un événement</a>
-           <br />
-           <br />
-           <a class="supprimerArticle button error rounded" href="supprimer_event.php">Supprimer un evenement</a>
-        </div>
-</body>
-</html>
+
+        <form action="" method="post">
+
+        <?php
+            echo '<input type="text" name="nomgrp" value="'. $contact->getNomGrp() .'"><br />
+                  <textarea name="nommembre" cols="50" rows="10">'.$contact->getNomMembre().'</textarea><br />
+                  <input type="mail" name="email" value="'.$contact->getEmail().'" /><br />
+                  <textarea name="spe" cols="50" rows="10">'.$contact->getSpe().'</textarea><br />
+                  <input type="text" name="url" value="'.$contact->getSite().'"></br />
+                  <input type="submit" name="valider" value="Valider les changements"/>
+                ';
+        ?>
