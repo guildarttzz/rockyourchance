@@ -71,7 +71,6 @@ if(isset($_GET['id_event']) && isset($_POST['nomgrp'])){
         <?php
             echo '<input type="text" name="nomgrp" value="'. $event->getNomGrp() .'">
             <br />
-            <textarea name="nommembre" 
             <input type="text" name="nomgrp" value="'. $event->getNomGrp() .'">
             <input type="submit" value="Valider">';
         ?>
